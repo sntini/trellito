@@ -11,6 +11,7 @@ public class UserService {
     private UserRepository repo;
 
     public List<User> getAllUsers() {
+
         return repo.findAll();
     }
 
@@ -20,7 +21,12 @@ public class UserService {
     }
 
     public User addUser(User user) {
+
         return repo.save(user);
+    }
+
+    public void deleteUser(Long id) {
+        repo.deleteById(id);
     }
 
 }

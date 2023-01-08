@@ -21,6 +21,7 @@
             <th>ID</th>
             <th>UserName</th>
             <th>Email</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -28,11 +29,20 @@
             <td th:text="${user.id}"></td>
             <td th:text=" ${user.userName}"></td>
             <td th:text=" ${user.email}"></td>
+            <td><p class="my-3">
+                <a th:href="@{/user/edit/id={id}(id=${user.id})}" class="btn btn-primary" >Edit User</a>
+                <a th:href="@{/user/delete/id={id}(id=${user.id})}" class="btn btn-primary" >Delete User</a>
+            </p>
+               </td>
+
         </tr>
 
         </tbody>
     </table>
 
+    <p class="my-5">
+        <a th:href="@{/user/delete/id={id}(id=${user.id})}" class="btn btn-primary" >Delete User</a>
+    </p>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
