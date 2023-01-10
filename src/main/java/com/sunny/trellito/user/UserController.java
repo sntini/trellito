@@ -20,13 +20,13 @@ public class UserController {
     @GetMapping("/all")
     public String getAllUsers(Model model) {
         model.addAttribute("userList", service.getAllUsers());
-        return "list-user";
+        return "user/list-user";
     }
 
     @GetMapping("/id={id}")
     public String getUserById(@PathVariable("id") long id, Model model) {
         model.addAttribute("user", service.findUserById(id));
-        return "user";
+        return "user/user";
     }
 
     @PostMapping("/saveUser")
@@ -39,7 +39,7 @@ public class UserController {
     @GetMapping("/addUser")
     public String addUserForm(Model model) {
         model.addAttribute("user", new User());
-        return "new-user-form";
+        return "user/new-user-form";
     }
 
     @GetMapping("/delete/id={id}")
@@ -52,7 +52,7 @@ public class UserController {
     public String editUserForm(@PathVariable("id") long id, Model model) {
         User user = service.findUserById(id);
         model.addAttribute("user", user);
-        return "update-user-form";
+        return "user/update-user-form";
     }
 
     @PostMapping("/updateUser")
