@@ -23,6 +23,6 @@ public class TaskService {
     }
 
     public List<Task> getTasksBySprint(Long id){
-        return repo.getTasksBySprint(id);
+        return repo.getTasksBySprintNumber(id);
     }
 }

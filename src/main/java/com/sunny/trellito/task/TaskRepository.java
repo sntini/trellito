@@ -9,5 +9,5 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     List<Task> getTasksByAssignee(Long assignee);
 
-    List<Task> getTasksBySprint(Long sprint);
+    List<Task> getTasksBySprintNumber(Long sprint);
 }
