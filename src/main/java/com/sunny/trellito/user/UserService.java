@@ -20,7 +20,7 @@ public class UserService {
         return repo.getReferenceById(id);
     }
 
-    public User addUser(User user) {
+    public User saveUser(User user) {
 
         return repo.save(user);
     }

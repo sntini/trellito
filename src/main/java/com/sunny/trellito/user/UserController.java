@@ -31,8 +31,7 @@ public class UserController {
 
     @PostMapping("/saveUser")
     public String saveUser(User user) {
-        logger.info(user.toString());
-        service.addUser(user);
+        service.saveUser(user);
         return "redirect:/user/all";
     }
 
@@ -57,7 +56,7 @@ public class UserController {
 
     @PostMapping("/updateUser")
     public String updateUser(User user) {
-        service.addUser(user);
+        service.saveUser(user);
         return "redirect:/user/all";
     }
 
